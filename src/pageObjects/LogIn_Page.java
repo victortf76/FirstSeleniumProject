@@ -30,8 +30,8 @@ public class LogIn_Page implements IPage {
     
     public void insertUserCredentials(String username, String password) throws Exception {
     	
-    	usernameBoxElement.clear();
-    	passwordBoxElement.clear();
+    	//usernameBoxElement.clear();
+    	//passwordBoxElement.clear();
     	
     	usernameBoxElement = CustomActions.customSendKeys(usernameBoxElement,"Filling username credentials: "+username,username);
     	passwordBoxElement = CustomActions.customSendKeys(passwordBoxElement,"Filling password credentials:"+password,password);

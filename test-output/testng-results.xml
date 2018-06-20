@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Sample Suite" duration-ms="144084" started-at="2018-06-19T07:59:40Z" finished-at="2018-06-19T08:02:04Z">
+  <suite name="Sample Suite" duration-ms="28418" started-at="2018-06-20T08:18:07Z" finished-at="2018-06-20T08:18:36Z">
     <groups>
     </groups>
-    <test name="chromeTest" duration-ms="51069" started-at="2018-06-19T07:59:40Z" finished-at="2018-06-19T08:00:31Z">
+    <test name="chromeTest" duration-ms="28418" started-at="2018-06-20T08:18:07Z" finished-at="2018-06-20T08:18:36Z">
       <class name="automationFramework.FirstTestCase">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:automationFramework.FirstTestCase@dbe50f]" name="setUp" is-config="true" duration-ms="10692" started-at="2018-06-19T07:59:40Z" finished-at="2018-06-19T07:59:51Z">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:automationFramework.FirstTestCase@dbe50f]" name="setUp" is-config="true" duration-ms="15247" started-at="2018-06-20T08:18:07Z" finished-at="2018-06-20T08:18:23Z">
           <params>
             <param index="0">
               <value>
@@ -18,46 +18,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="getTitle()[pri:0, instance:automationFramework.FirstTestCase@dbe50f]" name="getTitle" duration-ms="101" started-at="2018-06-19T07:59:51Z" finished-at="2018-06-19T07:59:51Z">
+        <test-method status="PASS" signature="getTitle()[pri:0, instance:automationFramework.FirstTestCase@dbe50f]" name="getTitle" duration-ms="71" started-at="2018-06-20T08:18:23Z" finished-at="2018-06-20T08:18:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getTitle -->
-        <test-method status="PASS" signature="logInErrorMessageCheck()[pri:0, instance:automationFramework.FirstTestCase@dbe50f]" name="logInErrorMessageCheck" duration-ms="39047" started-at="2018-06-19T07:59:51Z" finished-at="2018-06-19T08:00:30Z">
+        <test-method status="PASS" signature="logInErrorMessageCheck()[pri:0, instance:automationFramework.FirstTestCase@dbe50f]" name="logInErrorMessageCheck" duration-ms="12066" started-at="2018-06-20T08:18:23Z" finished-at="2018-06-20T08:18:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logInErrorMessageCheck -->
-        <test-method status="PASS" signature="shutDown()[pri:0, instance:automationFramework.FirstTestCase@dbe50f]" name="shutDown" is-config="true" duration-ms="1205" started-at="2018-06-19T08:00:30Z" finished-at="2018-06-19T08:00:31Z">
+        <test-method status="PASS" signature="shutDown()[pri:0, instance:automationFramework.FirstTestCase@dbe50f]" name="shutDown" is-config="true" duration-ms="1016" started-at="2018-06-20T08:18:35Z" finished-at="2018-06-20T08:18:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shutDown -->
       </class> <!-- automationFramework.FirstTestCase -->
     </test> <!-- chromeTest -->
-    <test name="firefoxTest" duration-ms="92952" started-at="2018-06-19T08:00:31Z" finished-at="2018-06-19T08:02:04Z">
-      <class name="automationFramework.FirstTestCase">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:automationFramework.FirstTestCase@133c8f8]" name="setUp" is-config="true" duration-ms="48273" started-at="2018-06-19T08:00:31Z" finished-at="2018-06-19T08:01:19Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[firefox]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="getTitle()[pri:0, instance:automationFramework.FirstTestCase@133c8f8]" name="getTitle" duration-ms="27" started-at="2018-06-19T08:01:19Z" finished-at="2018-06-19T08:01:19Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getTitle -->
-        <test-method status="PASS" signature="logInErrorMessageCheck()[pri:0, instance:automationFramework.FirstTestCase@133c8f8]" name="logInErrorMessageCheck" duration-ms="43578" started-at="2018-06-19T08:01:19Z" finished-at="2018-06-19T08:02:03Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logInErrorMessageCheck -->
-        <test-method status="PASS" signature="shutDown()[pri:0, instance:automationFramework.FirstTestCase@133c8f8]" name="shutDown" is-config="true" duration-ms="1071" started-at="2018-06-19T08:02:03Z" finished-at="2018-06-19T08:02:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- shutDown -->
-      </class> <!-- automationFramework.FirstTestCase -->
-    </test> <!-- firefoxTest -->
   </suite> <!-- Sample Suite -->
 </testng-results>

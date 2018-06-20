@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Sample Suite]">
-  <test thread-count="5" name="chromeTest(failed)">
-    <parameter name="browser" value="chrome"/>
-    <classes>
-      <class name="automationFramework.FirstTestCase">
-        <methods>
-          <include name="shutDown"/>
-          <include name="setUp"/>
-          <include name="getTitle"/>
-        </methods>
-      </class> <!-- automationFramework.FirstTestCase -->
-    </classes>
-  </test> <!-- chromeTest(failed) -->
   <test thread-count="5" name="firefoxTest(failed)">
     <parameter name="browser" value="firefox"/>
     <classes>
       <class name="automationFramework.FirstTestCase">
         <methods>
           <include name="shutDown"/>
+          <include name="logInErrorMessageCheck"/>
           <include name="setUp"/>
           <include name="getTitle"/>
         </methods>

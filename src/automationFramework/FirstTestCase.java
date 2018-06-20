@@ -96,12 +96,7 @@ public class FirstTestCase {
 					PageObjectModel.test.fail("The displayed error is incorrect: "+e);
 					
 				}
-			}/*
-			String message;
-			loginObject.insertUserCredentials("","");
-			message = loginObject.submitUserCredentials();
-			Assert.assertTrue(message.equalsIgnoreCase("Please enter your username and password."));
-			*/
+			}
 		}catch(Exception ef) {
 			
 			PageObjectModel.test.fatal(ef.toString());

@@ -54,7 +54,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-Sample_Suite">
-                    <span class="test-stats">2 tests</span>
+                    <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,16 +103,6 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Sample_Suite" title="automationFramework.FirstTestCase" hash-for-method="getTitle">getTitle</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Sample_Suite" title="automationFramework.FirstTestCase" hash-for-method="getTitle">getTitle</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Sample_Suite" title="automationFramework.FirstTestCase" hash-for-method="logInErrorMessageCheck">logInErrorMessageCheck</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -147,20 +137,6 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="getTitle">
-                  </a> <!-- getTitle -->
-                  <span class="method-name">getTitle</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="logInErrorMessageCheck">
-                  </a> <!-- logInErrorMessageCheck -->
-                  <span class="method-name">logInErrorMessageCheck</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="logInErrorMessageCheck">
                   </a> <!-- logInErrorMessageCheck -->
                   <span class="method-name">logInErrorMessageCheck</span>
@@ -184,12 +160,6 @@
       &lt;class name=&quot;automationFramework.FirstTestCase&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- chromeTest --&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;firefoxTest&quot;&gt;
-    &lt;parameter name=&quot;browser&quot; value=&quot;firefox&quot;/&gt;
-    &lt;classes&gt;
-      &lt;class name=&quot;automationFramework.FirstTestCase&quot;/&gt;
-    &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- firefoxTest --&gt;
 &lt;/suite&gt; &lt;!-- Sample Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -202,9 +172,6 @@
             <ul>
               <li>
                 <span class="test-name">chromeTest (1 class)</span>
-              </li>
-              <li>
-                <span class="test-name">firefoxTest (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -230,28 +197,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'logInErrorMessageCheck')
 data.setCell(0, 2, 'automationFramework.FirstTestCase')
-data.setCell(0, 3, 43578);
+data.setCell(0, 3, 12066);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'logInErrorMessageCheck')
+data.setCell(1, 1, 'getTitle')
 data.setCell(1, 2, 'automationFramework.FirstTestCase')
-data.setCell(1, 3, 39047);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'getTitle')
-data.setCell(2, 2, 'automationFramework.FirstTestCase')
-data.setCell(2, 3, 101);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'getTitle')
-data.setCell(3, 2, 'automationFramework.FirstTestCase')
-data.setCell(3, 3, 27);
+data.setCell(1, 3, 71);
 window.suiteTableData['Sample_Suite']= { tableData: data, tableDiv: 'times-div-Sample_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 12 seconds</span>
               <div id="times-div-Sample_Suite">
               </div> <!-- times-div-Sample_Suite -->
             </div> <!-- times-div -->
@@ -284,31 +243,15 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">getTitle</span>
-                <span class="method-start">10709 ms</span>
+                <span class="method-start">15260 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">logInErrorMessageCheck</span>
-                <span class="method-start">10811 ms</span>
+                <span class="method-start">15332 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">shutDown</span>
-                <span class="method-start">49862 ms</span>
-              </div> <!-- configuration-test after -->
-              <div class="configuration-test before">
-                <span class="method-name">setUp(firefox)</span>
-                <span class="method-start">51130 ms</span>
-              </div> <!-- configuration-test before -->
-              <div class="test-method">
-                <span class="method-name">getTitle</span>
-                <span class="method-start">99404 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">logInErrorMessageCheck</span>
-                <span class="method-start">99432 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-test after">
-                <span class="method-name">shutDown</span>
-                <span class="method-start">143011 ms</span>
+                <span class="method-start">27401 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
