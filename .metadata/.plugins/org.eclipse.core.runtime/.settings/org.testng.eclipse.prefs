@@ -1,0 +1,3 @@
+TestProject.outdir=test-output
+TestProjectxmlTemplateFile=${workspace_loc\:TestProject/testng.xml}
+eclipse.preferences.version=1

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Sample Suite" duration-ms="60043" started-at="2018-06-22T09:12:28Z" finished-at="2018-06-22T09:13:28Z">
+    <groups>
+    </groups>
+    <test name="chromeTest" duration-ms="60043" started-at="2018-06-22T09:12:28Z" finished-at="2018-06-22T09:13:28Z">
+      <class name="automationFramework.FirstTestCase">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:automationFramework.FirstTestCase@dbe50f]" name="setUp" is-config="true" duration-ms="23571" started-at="2018-06-22T09:12:28Z" finished-at="2018-06-22T09:12:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="getTitle()[pri:0, instance:automationFramework.FirstTestCase@dbe50f]" name="getTitle" duration-ms="108" started-at="2018-06-22T09:12:51Z" finished-at="2018-06-22T09:12:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getTitle -->
+        <test-method status="PASS" signature="logInErrorMessageCheck()[pri:0, instance:automationFramework.FirstTestCase@dbe50f]" name="logInErrorMessageCheck" duration-ms="35241" started-at="2018-06-22T09:12:51Z" finished-at="2018-06-22T09:13:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logInErrorMessageCheck -->
+        <test-method status="PASS" signature="shutDown()[pri:0, instance:automationFramework.FirstTestCase@dbe50f]" name="shutDown" is-config="true" duration-ms="1098" started-at="2018-06-22T09:13:27Z" finished-at="2018-06-22T09:13:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shutDown -->
+      </class> <!-- automationFramework.FirstTestCase -->
+    </test> <!-- chromeTest -->
+  </suite> <!-- Sample Suite -->
+</testng-results>
