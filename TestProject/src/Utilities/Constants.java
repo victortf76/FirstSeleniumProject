@@ -3,6 +3,8 @@ package Utilities;
 public class Constants {
 	
 	public static final String URL = "http://www.store.demoqa.com";
+	
+	public static final String URL2 = "http://ifcbuservice.id.test1.alipay.net/login.htm?goto=http%3A%2F%2Fifccustmng.id.test1.alipay.net%2Fuser%2Fkyc%2Fquery.htm";
 	 
     public static final String Username = "testuser_1";
 

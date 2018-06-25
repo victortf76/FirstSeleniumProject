@@ -16,8 +16,6 @@ import org.testng.annotations.Test;
 
 public class FirstTestCase {
 	
-	//Create Soft Assertions
-	
 	Home_Page homeObject;
 	LogIn_Page loginObject;
 	
@@ -26,8 +24,6 @@ public class FirstTestCase {
 	public void setUp(String browser) throws Exception {
 		
 		PageObjectModel.initializeAll(browser);
-		
-		//ExcelUtils.setExcelFile(Constants.Path_TestData + Constants.Excel_TestData,"Sheet1");
 		
 	}
 	
@@ -75,7 +71,8 @@ public class FirstTestCase {
 			String [] nextLine;
 			
 			homeObject = new Home_Page();
-			loginObject = (LogIn_Page)homeObject.goToMyAccount();
+			//Deprecated
+			//loginObject = (LogIn_Page)homeObject.goToMyAccount();
 			
 			while ((nextLine = reader.readNext()) != null) {
 				try {

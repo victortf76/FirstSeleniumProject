@@ -48,7 +48,7 @@ public class PageObjectModel {
 		}
 		driver.manage().window().maximize();
 		//Launch the Online Website
-		driver.get(Constants.URL);
+		driver.get(Constants.URL2);
 		//Initialize actions
 		action = new Actions(driver);
 		//Initialize WebDriverait

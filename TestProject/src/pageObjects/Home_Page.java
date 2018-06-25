@@ -14,17 +14,20 @@ public class Home_Page implements IPage {
 	
 	
 
-	@FindBy(id = "account")
-	static WebElement myAccountElement;
+	@FindBy(id = "login-name-input")
+	static WebElement accountElement;
 	
-	@FindBy(id = "account_logout")
-	static WebElement logoutElement;
+	@FindBy(id = "pwd-input")
+	static WebElement passwordElement;
+	
+	@FindBy(id = "login-btn")
+	static WebElement signinButtonElement;
 	
 	public Home_Page() {
-		PageObjectModel.wait.until(ExpectedConditions.presenceOfElementLocated(By.id("slides")));
+		PageObjectModel.wait.until(ExpectedConditions.elementToBeClickable(By.id("login-btn")));
 		PageFactory.initElements(PageObjectModel.driver, this);
 	}
-	
+	/* Deprecated
 	public IPage goToMyAccount() {
 		myAccountElement = CustomActions.customClick(myAccountElement,"Accessing to my account");
 		return new LogIn_Page();
@@ -33,7 +36,7 @@ public class Home_Page implements IPage {
 	public void logout() {
 		logoutElement = CustomActions.customClick(logoutElement, "Loging out");
 	}
-	
+	*/
 	public String getTitle() {
 		String title = PageObjectModel.driver.getTitle();
 		

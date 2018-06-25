@@ -1,95 +1,70 @@
 package automationFramework;
 
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import java.io.FileReader;
 import org.testng.Assert;
-import org.testng.asserts.SoftAssert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import Utilities.Constants;
+import Utilities.ExcelUtils;
+import Utilities.PageObjectModel;
+import au.com.bytecode.opencsv.CSVReader;
+import pageObjects.Home_Page;
+import pageObjects.LogIn_Page;
+
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class SecondTestCase {
-	
-	//Create Soft Assertions
-	public SoftAssert softAssert = new SoftAssert();
-	
-	// Create a new instance of the Chrome driver
-	public WebDriver driver;
-	public Actions action;
-	public WebDriverWait wait;
-	public WebElement webElement;
+	Home_Page homeObject;
+	LogIn_Page loginObject;
 	
 	@Parameters("browser")
-	
-	@BeforeClass
-	public void setUp(String browser) {
+	@BeforeTest
+	public void setUp(String browser) throws Exception {
 		
-		//Starts the Chrome driver
-		if (browser.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver","C:\\Users\\Convidad01\\QAEnvironment\\chromedriver_win32\\chromedriver.exe");
-			driver = new ChromeDriver();
-		}
+		PageObjectModel.initializeAll(browser);
 		
-		//Starts the Firefox driver
-		if (browser.equalsIgnoreCase("firefox")){
-			System.setProperty("webdriver.gecko.driver","C:\\Users\\Convidad01\\QAEnvironment\\TestProject\\geckodriver-v0.20.1-win64\\geckodriver.exe");
-			driver = new FirefoxDriver();
-		}
-		//Launch the Online Website
-		driver.get("http://www.softwaretestingmaterial.com/");
-		//Initialize actions
-		action = new Actions(driver);
-		//Initialize WebDriverait
-		wait = new WebDriverWait(driver,5);		
 	}
 	
 	@Test
 	public void getTitle() {
-		//Get the site's title
-		String realResult = driver.getTitle();
-		String expectedResult = "Software Testing Material";
-		
-		// Print a Log In message to the screen
-		System.out.println("Real result: " + realResult + " Expected result: " + expectedResult);
-		
-		//Compare if the gotten title is the expected one
-		softAssert.assertTrue(realResult.equalsIgnoreCase(expectedResult), "Page title doesn't match");
-	}
-	
-	@Test
-	public void testLocator1() throws InterruptedException {
-		//driver.findElement(By.id("menu-item-4275"));
-		By locator = By.id("menu-item-4275");
-		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-		webElement = driver.findElement(locator);
-		action.click(webElement).build().perform();
-		Thread.sleep(5000);
-		String realResult = driver.getTitle();
-		String expectedResult = "Guest Post Guidelines";
-		// Print a Log In message to the screen
-		System.out.println("Real result: " + realResult + " Expected result: " + expectedResult);
-				
-		//Compare if the gotten title is the expected one
-		softAssert.assertTrue(realResult.equalsIgnoreCase(expectedResult), "Page title doesn't match");
-
-	}
-	
-	@AfterClass
-	public void shutDown() {
-		if (driver!=null) {
-			// Close the driver
-			driver.quit();
+		try {
+			//Initialize Extent Test
+			PageObjectModel.test = PageObjectModel.extent.createTest("getTitle("+PageObjectModel.usedBrowser+")", "Checks the actual page's title");
+			homeObject = new Home_Page();
+			
+			//Get the site's title
+			String realResult = homeObject.getTitle();
+			String expectedResult = "Sign In";
+			
+			// Print a Log In message to the screen
+			System.out.println("Real result: " + realResult + " Expected result: " + expectedResult);
+			
+			//Compare if the gotten title is the expected one
+			Assert.assertTrue(realResult.equalsIgnoreCase(expectedResult));
+			PageObjectModel.test.pass("Page title expected: '"+realResult+"'");
+			
+		}catch(AssertionError e){
+			
+			PageObjectModel.test.fail("Page title doesn't match");
+			
+		}catch(Exception ef){
+			
+			PageObjectModel.test.fatal(ef.toString());
+			
 		}
-		softAssert.assertAll();		
 	}
-
+	
+	@AfterTest
+	public void shutDown() {
+		
+		if (PageObjectModel.driver!=null) {
+			// Close the driver
+			PageObjectModel.driver.quit();
+			
+		}
+		
+		PageObjectModel.extent.flush();
+		
+	}
 }
