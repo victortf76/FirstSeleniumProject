@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Sample Suite" duration-ms="14086" started-at="2018-06-25T06:53:08Z" finished-at="2018-06-25T06:53:22Z">
+  <suite name="Sample Suite" duration-ms="13483" started-at="2018-06-25T09:26:50Z" finished-at="2018-06-25T09:27:04Z">
     <groups>
     </groups>
-    <test name="chromeTest" duration-ms="14086" started-at="2018-06-25T06:53:08Z" finished-at="2018-06-25T06:53:22Z">
+    <test name="chromeTest" duration-ms="13483" started-at="2018-06-25T09:26:50Z" finished-at="2018-06-25T09:27:04Z">
       <class name="automationFramework.SecondTestCase">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:automationFramework.SecondTestCase@1ce92674]" name="setUp" is-config="true" duration-ms="12589" started-at="2018-06-25T06:53:08Z" finished-at="2018-06-25T06:53:21Z">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:automationFramework.SecondTestCase@dbe50f]" name="setUp" is-config="true" duration-ms="12244" started-at="2018-06-25T09:26:50Z" finished-at="2018-06-25T09:27:02Z">
           <params>
             <param index="0">
               <value>
@@ -18,11 +18,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="getTitle()[pri:0, instance:automationFramework.SecondTestCase@1ce92674]" name="getTitle" duration-ms="125" started-at="2018-06-25T06:53:21Z" finished-at="2018-06-25T06:53:21Z">
+        <test-method status="PASS" signature="getTitle()[pri:0, instance:automationFramework.SecondTestCase@dbe50f]" name="getTitle" duration-ms="137" started-at="2018-06-25T09:27:02Z" finished-at="2018-06-25T09:27:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getTitle -->
-        <test-method status="PASS" signature="shutDown()[pri:0, instance:automationFramework.SecondTestCase@1ce92674]" name="shutDown" is-config="true" duration-ms="1343" started-at="2018-06-25T06:53:21Z" finished-at="2018-06-25T06:53:22Z">
+        <test-method status="PASS" signature="shutDown()[pri:0, instance:automationFramework.SecondTestCase@dbe50f]" name="shutDown" is-config="true" duration-ms="1081" started-at="2018-06-25T09:27:02Z" finished-at="2018-06-25T09:27:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shutDown -->

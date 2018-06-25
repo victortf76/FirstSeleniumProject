@@ -7,11 +7,13 @@
 		<classes>
 			<class name="automationFramework.SecondTestCase" />
 		</classes>
-	</test> 
+	</test>
+	<!--  
 	<test name="firefoxTest">
 		<parameter name="browser" value="firefox" />
 		<classes>
-			<class name="automationFramework.SecondTestCase" />
+			<class name="automationFramework.FirstTestCase" />
 		</classes>
 	</test>
+	-->
 </suite>
