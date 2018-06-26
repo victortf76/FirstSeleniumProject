@@ -1,0 +1,52 @@
+package pageObjects;
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import Utilities.CustomActions;
+import Utilities.PageObjectModel;
+
+public class LogIn_Page implements IPage {
+	
+	@FindBy(id = "login-name-input")
+	static WebElement accountElement;
+	
+	@FindBy(id = "pwd-input")
+	static WebElement passwordElement;
+	
+	@FindBy(id = "login-btn")
+	static WebElement signinButtonElement;
+	
+    public LogIn_Page() {
+    	PageObjectModel.wait.until(ExpectedConditions.elementToBeClickable(By.id("login-btn")));
+		PageFactory.initElements(PageObjectModel.driver, this);
+    }
+    
+    public void insertUserCredentials(String username, String password) throws Exception {
+    	
+    	accountElement.clear();
+    	passwordElement.clear();
+    	
+    	accountElement = CustomActions.customSendKeys(accountElement,"Filling username credentials: "+username,username);
+    	passwordElement = CustomActions.customSendKeys(passwordElement,"Filling password credentials:"+password,password);
+    }
+    
+    public void submitUserCredentials() {
+    	
+    	signinButtonElement = CustomActions.customClick(signinButtonElement,"Submiting user credentials");
+    	
+    }
+    
+    /*Deprecated
+    public String getUserFromExcel() throws Exception {
+    	return ExcelUtils.getCellData(1,1);
+    }
+    
+    public String getPassFromExcel() throws Exception {
+    	return ExcelUtils.getCellData(1, 2);
+    }
+	*/
+}

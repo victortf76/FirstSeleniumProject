@@ -24,11 +24,13 @@ public class Home_Page implements IPage {
 		PageFactory.initElements(PageObjectModel.driver, this);
 	}
 	
-	public void goToKYCPage() {
+	public IPage goToKYCPage() {
 		PageObjectModel.wait.until(ExpectedConditions.visibilityOf(userNavBar));
 		userNavBar = CustomActions.customClick(userNavBar, "clicking on user");
 		PageObjectModel.wait.until(ExpectedConditions.visibilityOf(KYCQueryNavBar));
 		KYCQueryNavBar = CustomActions.customClick(KYCQueryNavBar, "clicking on KYC Query Order");
+		
+		return new KYCQuery_Page();
 		
 	}
 	

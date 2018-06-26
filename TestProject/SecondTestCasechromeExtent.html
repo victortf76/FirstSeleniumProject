@@ -46,7 +46,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Jun 26, 2018 10:06:02 AM</span>
+                    <span class='label suite-start-time blue darken-3'>Jun 26, 2018 04:47:09 PM</span>
 				</a>
 			</li>
 			<li>
@@ -72,6 +72,7 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -122,10 +123,10 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>2</span> test(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='50%'><span class='strong'>1</span> test(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='50%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -137,10 +138,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='14.286%'><span class='strong'>1</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='32.609%'><span class='strong'>15</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='85.714%'>6</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='4.348%'>2</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='63.043%'>29</span> others
 				</div>
 			</div>
 		</div>
@@ -155,19 +156,19 @@
 			<ul id='test-collection' class='test-collection'>
 				
 				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>KYC Access(chrome)</span>
-						<span class='test-time'>Jun 26, 2018 10:06:03 AM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-name'>KYCBOLoginTest (chrome)</span>
+						<span class='test-time'>Jun 26, 2018 04:47:10 PM</span>
+						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jun 26, 2018 10:06:03 AM</span>
-	<span class='label end-time'>Jun 26, 2018 10:06:14 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 11s+276ms</span>
+	<span class='label start-time'>Jun 26, 2018 04:47:10 PM</span>
+	<span class='label end-time'>Jun 26, 2018 04:47:53 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 43s+480ms</span>
 </div>
-	<div class='test-desc'>Checks if it's possible to access to the KYC Query page </div>
+	<div class='test-desc'>Checks the login to KYC Back Office with valid credentials </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
 			<thead>
@@ -180,28 +181,83 @@
 			<tbody>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>10:06:03 AM</td>
+					<td class='timestamp'>4:47:10 PM</td>
 					<td class='step-details'>Filling username credentials: wb-victortru409198</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>10:06:03 AM</td>
-					<td class='step-details'>Filling password credentials:Chicoten13</td>
+					<td class='timestamp'>4:47:11 PM</td>
+					<td class='step-details'>Filling password credentials: *******</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>10:06:10 AM</td>
+					<td class='timestamp'>4:47:17 PM</td>
 					<td class='step-details'>Submiting user credentials</td>
 				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>10:06:10 AM</td>
-					<td class='step-details'>clicking on user</td>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:47:17 PM</td>
+					<td class='step-details'>Autentifiaction successful</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>10:06:14 AM</td>
-					<td class='step-details'>clicking on KYC Query Order</td>
+					<td class='timestamp'>4:47:18 PM</td>
+					<td class='step-details'>Filling username credentials: wb-victortru409198</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:47:19 PM</td>
+					<td class='step-details'>Filling password credentials: *******</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:47:20 PM</td>
+					<td class='step-details'>Submiting user credentials</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:47:20 PM</td>
+					<td class='step-details'>Unauthorized login, permission breach</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:47:21 PM</td>
+					<td class='step-details'>Filling username credentials: testuser_1</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:47:21 PM</td>
+					<td class='step-details'>Filling password credentials: *******</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:47:21 PM</td>
+					<td class='step-details'>Submiting user credentials</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>4:47:36 PM</td>
+					<td class='step-details'>Impossible to login for an authorized user</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:47:37 PM</td>
+					<td class='step-details'>Filling username credentials: testuser_1</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:47:37 PM</td>
+					<td class='step-details'>Filling password credentials: *******</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:47:38 PM</td>
+					<td class='step-details'>Submiting user credentials</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:47:53 PM</td>
+					<td class='step-details'>Cannot login. Unauthorized credentials</td>
 				</tr>
 			</tbody>
 		</table>
@@ -212,17 +268,17 @@
 				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
 					<div class='test-heading'>
-						<span class='test-name'>getTitle(chrome)</span>
-						<span class='test-time'>Jun 26, 2018 10:06:15 AM</span>
+						<span class='test-name'>KYCQueryOrderPageParametersDisplayedTest (chrome)</span>
+						<span class='test-time'>Jun 26, 2018 04:47:54 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jun 26, 2018 10:06:15 AM</span>
-	<span class='label end-time'>Jun 26, 2018 10:06:15 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+107ms</span>
+	<span class='label start-time'>Jun 26, 2018 04:47:54 PM</span>
+	<span class='label end-time'>Jun 26, 2018 04:48:02 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 8s+354ms</span>
 </div>
-	<div class='test-desc'>Checks the actual page's title </div>
+	<div class='test-desc'>Checks the buttons on the search page </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
 			<thead>
@@ -235,13 +291,153 @@
 			<tbody>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>10:06:15 AM</td>
-					<td class='step-details'>Obtaining LogIn Page Title's</td>
+					<td class='timestamp'>4:47:54 PM</td>
+					<td class='step-details'>Filling username credentials: wb-victortru409198</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:47:54 PM</td>
+					<td class='step-details'>Filling password credentials: *******</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:47:55 PM</td>
+					<td class='step-details'>Submiting user credentials</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:47:55 PM</td>
+					<td class='step-details'>clicking on user</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:48:01 PM</td>
+					<td class='step-details'>clicking on KYC Query Order</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:48:01 PM</td>
+					<td class='step-details'>Looking for Login ID input box</td>
 				</tr>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>10:06:15 AM</td>
-					<td class='step-details'>Page title: 'Sign In'</td>
+					<td class='timestamp'>4:48:02 PM</td>
+					<td class='step-details'>Login ID input box present</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:48:02 PM</td>
+					<td class='step-details'>Looking for Status dropdown box</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:02 PM</td>
+					<td class='step-details'>Status dropdown box present</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:48:02 PM</td>
+					<td class='step-details'>Looking for Search button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:02 PM</td>
+					<td class='step-details'>Search button present</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:48:02 PM</td>
+					<td class='step-details'>Looking for Clear button</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:02 PM</td>
+					<td class='step-details'>Clear button present</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:48:02 PM</td>
+					<td class='step-details'>Getting KYC Order ID text</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:02 PM</td>
+					<td class='step-details'>KYC Order ID displayed correctly</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:48:02 PM</td>
+					<td class='step-details'>Getting Login ID text</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:02 PM</td>
+					<td class='step-details'>Login ID displayed correctly</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:48:02 PM</td>
+					<td class='step-details'>Getting User Account Name text</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:02 PM</td>
+					<td class='step-details'>User Account Name displayed correctly</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:48:02 PM</td>
+					<td class='step-details'>Getting Submission Date text</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:02 PM</td>
+					<td class='step-details'>Submission Date displayed correctly</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:48:02 PM</td>
+					<td class='step-details'>Getting Document Type text</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:02 PM</td>
+					<td class='step-details'>Document Type displayed correctly</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:48:02 PM</td>
+					<td class='step-details'>Getting Status text</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:02 PM</td>
+					<td class='step-details'>Status displayed correctly</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:48:02 PM</td>
+					<td class='step-details'>Getting Modified Date text</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:02 PM</td>
+					<td class='step-details'>Modified Date displayed correctly</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:48:02 PM</td>
+					<td class='step-details'>Getting Action text</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:02 PM</td>
+					<td class='step-details'>Action displayed correctly</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:48:02 PM</td>
+					<td class='step-details'>All elements are present</td>
 				</tr>
 			</tbody>
 		</table>
@@ -289,25 +485,25 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>7</div>
+					<div class='panel-lead'>46</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jun 26, 2018 10:06:02 AM</div>
+					<div class='panel-lead'>Jun 26, 2018 04:47:09 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jun 26, 2018 10:06:16 AM</div>
+			 		<div class='panel-lead'>Jun 26, 2018 04:48:03 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 0m 13s+583ms</div>
+					<div class='panel-lead'>0h 0m 53s+577ms</div>
 				</div>
 			</div>
 		</div>
@@ -320,22 +516,22 @@
 
 		<script>
 			var statusGroup = {
-				passParent: 2,
-				failParent: 0,
+				passParent: 1,
+				failParent: 1,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				exceptionsParent: 0,
+				exceptionsParent: 1,
 				
-				passChild: 1,
-				failChild: 0,
+				passChild: 15,
+				failChild: 2,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
-				infoChild: 6,
-				exceptionsChild: 0,
+				infoChild: 29,
+				exceptionsChild: 2,
 				
 				passGrandChild: 0,
 				failGrandChild: 0,

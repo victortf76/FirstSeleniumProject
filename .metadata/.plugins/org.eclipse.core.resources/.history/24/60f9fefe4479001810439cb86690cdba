@@ -1,0 +1,174 @@
+package automationFramework;
+
+import static org.testng.Assert.assertTrue;
+
+import org.testng.Assert;
+import Utilities.Constants;
+import Utilities.CustomActions;
+import Utilities.PageObjectModel;
+import pageObjects.Home_Page;
+import pageObjects.KYCQuery_Page;
+import pageObjects.LogIn_Page;
+
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class SecondTestCase {
+	Home_Page homeObject;
+	LogIn_Page loginObject;
+	KYCQuery_Page queryObject;
+	
+	@Parameters("browser")
+	@BeforeTest
+	public void setUp(String browser) throws Exception {
+		
+		PageObjectModel.initializeAll(browser, "SecondTestCase");
+		
+	}
+	
+	@Test
+	public void getTitle() {
+		try {
+			PageObjectModel.driver.get(Constants.URL2);
+			//Initialize Extent Test
+			PageObjectModel.test = PageObjectModel.extent.createTest("getTitle("+PageObjectModel.usedBrowser+")", "Checks the actual page's title");
+			loginObject = new LogIn_Page();
+			
+			//Get the site's title
+			String realResult = CustomActions.customGetTitle("Obtaining LogIn Page Title's");
+			String expectedResult = "Sign In";
+			
+			// Print a Log In message to the screen
+			System.out.println("Real result: " + realResult + " Expected result: " + expectedResult);
+			
+			//Compare if the gotten title is the expected one
+			Assert.assertTrue(realResult.equalsIgnoreCase(expectedResult));
+			PageObjectModel.test.pass("Page title: '"+realResult+"'");
+			
+		}catch(AssertionError e){
+			
+			PageObjectModel.test.fail("Page title doesn't match");
+			
+		}catch(Exception ef){
+			
+			PageObjectModel.test.fatal(ef.toString());
+			
+		}
+	}
+	
+	@Test
+	public void KYCAccessTest() {
+		try {
+			PageObjectModel.driver.get(Constants.URL2);
+			PageObjectModel.test = PageObjectModel.extent.createTest("KYCAccessTest ("+PageObjectModel.usedBrowser+")", "Checks if it's possible to access to the KYC Query page");
+			loginObject = new LogIn_Page();
+			
+			loginObject.insertUserCredentials(Constants.Username2, Constants.Password2);
+			loginObject.submitUserCredentials();
+			
+			homeObject = new Home_Page();
+			
+			queryObject = (KYCQuery_Page) homeObject.goToKYCPage();
+			
+			String realResult = CustomActions.customGetTitle("Obtaining KYC QUery Order Page Title's");
+			String expectedResult = "KYC Query Order";
+			
+			// Print a Log In message to the screen
+			System.out.println("Real result: " + realResult + " Expected result: " + expectedResult);
+			
+			//Compare if the gotten title is the expected one
+			Assert.assertTrue(realResult.equalsIgnoreCase(expectedResult));
+			PageObjectModel.test.pass("Page title: '"+realResult+"'");
+			
+		}catch(AssertionError e){
+			
+			PageObjectModel.test.fail("Page title doesn't match");
+			
+		}catch(Exception ef) {
+			
+			PageObjectModel.test.fatal(ef.toString());
+			
+		}
+	}
+	
+		
+	@Test
+	public void searchParametersTest() {
+		try {
+			
+			PageObjectModel.driver.get(Constants.URL2);
+			PageObjectModel.test = PageObjectModel.extent.createTest("searchParametersTest ("+PageObjectModel.usedBrowser+")", "Checks the buttons on the search page");
+			
+			loginObject = new LogIn_Page();
+			
+			loginObject.insertUserCredentials(Constants.Username2, Constants.Password2);
+			loginObject.submitUserCredentials();
+			
+			homeObject = new Home_Page();
+			
+			queryObject = (KYCQuery_Page) homeObject.goToKYCPage();
+			
+			
+			assertTrue(queryObject.presenceOfMainElements());
+			
+			String orderIdText = queryObject.getOrderIdText();
+			String loginIdText = queryObject.getloginIdText();
+			String usernameText = queryObject.getUsernameText();
+			String submissionText = queryObject.getsubmissionText();
+			String documentText = queryObject.getDocumentText();
+			String statusText = queryObject.getStatusText();
+			String modifiedText = queryObject.getModifiedText();
+			String actionText = queryObject.getActionIdText();
+			
+			Assert.assertTrue(orderIdText.equalsIgnoreCase("KYC Order ID"));
+			PageObjectModel.test.pass("KYC Order ID displayed correctly");
+			
+			Assert.assertTrue(loginIdText.equalsIgnoreCase("Login ID"));
+			PageObjectModel.test.pass("Login ID displayed correctly");
+			
+			Assert.assertTrue(usernameText.equalsIgnoreCase("User Account Name"));
+			PageObjectModel.test.pass("User Account Name displayed correctly");
+			
+			Assert.assertTrue(submissionText.equalsIgnoreCase("Submission Date"));
+			PageObjectModel.test.pass("Submission Date displayed correctly");
+			
+			Assert.assertTrue(documentText.equalsIgnoreCase("Document Type"));
+			PageObjectModel.test.pass("Document Type displayed correctly");
+			
+			Assert.assertTrue(statusText.equalsIgnoreCase("Status"));
+			PageObjectModel.test.pass("Status displayed correctly");
+			
+			Assert.assertTrue(modifiedText.equalsIgnoreCase("Modified Date"));
+			PageObjectModel.test.pass("Modified Date displayed correctly");
+			
+			Assert.assertTrue(actionText.equalsIgnoreCase("Action"));
+			PageObjectModel.test.pass("Action displayed correctly");
+			
+			PageObjectModel.test.pass("All elements are present");
+			
+			//queryObject.presenceOfTexts();
+			
+		}catch(AssertionError e){
+			
+			PageObjectModel.test.fail("One or more items are missing");
+			
+		}catch(Exception ef) {
+			PageObjectModel.test.fatal(ef.toString());
+		}
+	}
+	
+	@AfterTest
+	public void shutDown() {
+		
+		if (PageObjectModel.driver!=null) {
+			// Close the driver
+			PageObjectModel.driver.quit();
+			
+		}
+		
+		PageObjectModel.extent.flush();
+		
+	}
+}

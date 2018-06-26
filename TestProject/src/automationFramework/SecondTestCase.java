@@ -1,19 +1,21 @@
 package automationFramework;
 
-import org.junit.Before;
-import org.openqa.selenium.WebDriver;
+import static org.testng.Assert.assertTrue;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 import org.testng.Assert;
 import Utilities.Constants;
 import Utilities.CustomActions;
-import Utilities.ExcelUtils;
 import Utilities.PageObjectModel;
 import au.com.bytecode.opencsv.CSVReader;
 import pageObjects.Home_Page;
-import pageObjects.IPage;
+import pageObjects.KYCQuery_Page;
 import pageObjects.LogIn_Page;
 
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -21,6 +23,7 @@ import org.testng.annotations.Test;
 public class SecondTestCase {
 	Home_Page homeObject;
 	LogIn_Page loginObject;
+	KYCQuery_Page queryObject;
 	
 	@Parameters("browser")
 	@BeforeTest
@@ -31,40 +34,53 @@ public class SecondTestCase {
 	}
 	
 	@Test
-	public void getTitle() {
-		try {
-			PageObjectModel.driver.get(Constants.URL2);
-			//Initialize Extent Test
-			PageObjectModel.test = PageObjectModel.extent.createTest("getTitle("+PageObjectModel.usedBrowser+")", "Checks the actual page's title");
-			loginObject = new LogIn_Page();
-			
-			//Get the site's title
-			String realResult = CustomActions.customGetTitle("Obtaining LogIn Page Title's");
-			String expectedResult = "Sign In";
-			
-			// Print a Log In message to the screen
-			System.out.println("Real result: " + realResult + " Expected result: " + expectedResult);
-			
-			//Compare if the gotten title is the expected one
-			Assert.assertTrue(realResult.equalsIgnoreCase(expectedResult));
-			PageObjectModel.test.pass("Page title: '"+realResult+"'");
-			
-		}catch(AssertionError e){
-			
-			PageObjectModel.test.fail("Page title doesn't match");
-			
-		}catch(Exception ef){
-			
-			PageObjectModel.test.fatal(ef.toString());
-			
+	public void KYCBOLoginTest() throws IOException {
+
+		PageObjectModel.test = PageObjectModel.extent.createTest("KYCBOLoginTest ("+PageObjectModel.usedBrowser+")", "Checks the login to KYC Back Office with valid credentials");
+		
+		String csvFile = Constants.Path_TestData + Constants.CSV_LoginTestData;
+		CSVReader reader = new CSVReader(new FileReader(csvFile));
+		String[] nextLine;
+		String username;
+		String password;
+		int validity;
+		
+		while ((nextLine = reader.readNext()) != null) {
+			try {
+				
+				PageObjectModel.driver.get(Constants.URL2);
+				
+				username = nextLine[0];
+				password = nextLine[1];				
+				validity = Integer.parseInt(nextLine[2]);
+				
+				loginObject = new LogIn_Page();
+				
+				loginObject.insertUserCredentials(username, password);
+				homeObject = (Home_Page) loginObject.submitUserCredentials();
+				
+				if((homeObject != null)&&(validity==1)) PageObjectModel.test.pass("Autentifiaction successful");
+				if((homeObject != null)&&(validity==0)) PageObjectModel.test.fail("Unauthorized login, permission breach");
+				if((homeObject == null)&&(validity==1)) PageObjectModel.test.fail("Impossible to login for an authorized user");
+				if((homeObject == null)&&(validity==0)) PageObjectModel.test.pass("Cannot login. Unauthorized credentials");
+				
+							
+			}catch(Exception ef) {
+				
+				PageObjectModel.test.fatal(ef.toString());
+				
+			}
 		}
 	}
 	
+		
 	@Test
-	public void KYCAccessTest() {
+	public void KYCQueryOrderPageParametersDisplayedTest() {
 		try {
+			
 			PageObjectModel.driver.get(Constants.URL2);
-			PageObjectModel.test = PageObjectModel.extent.createTest("KYC Access("+PageObjectModel.usedBrowser+")", "Checks if it's possible to access to the KYC Query page");
+			PageObjectModel.test = PageObjectModel.extent.createTest("KYCQueryOrderPageParametersDisplayedTest ("+PageObjectModel.usedBrowser+")", "Checks the buttons on the search page");
+			
 			loginObject = new LogIn_Page();
 			
 			loginObject.insertUserCredentials(Constants.Username2, Constants.Password2);
@@ -72,12 +88,59 @@ public class SecondTestCase {
 			
 			homeObject = new Home_Page();
 			
-			homeObject.goToKYCPage();
+			queryObject = (KYCQuery_Page) homeObject.goToKYCPage();
+			
+						
+			assertTrue(queryObject.presenceOfMainElements());
+			
+			PageObjectModel.test.info("Getting KYC Order ID text");
+			String orderIdText = queryObject.getOrderIdText();
+			assertTrue(orderIdText.equalsIgnoreCase("KYC Order ID"));
+			PageObjectModel.test.pass("KYC Order ID displayed correctly");
+			
+			PageObjectModel.test.info("Getting Login ID text");
+			String loginIdText = queryObject.getloginIdText();
+			assertTrue(loginIdText.equalsIgnoreCase("Login ID"));
+			PageObjectModel.test.pass("Login ID displayed correctly");
+			
+			PageObjectModel.test.info("Getting User Account Name text");
+			String usernameText = queryObject.getUsernameText();
+			assertTrue(usernameText.equalsIgnoreCase("User Account Name"));
+			PageObjectModel.test.pass("User Account Name displayed correctly");
+			
+			PageObjectModel.test.info("Getting Submission Date text");
+			String submissionText = queryObject.getsubmissionText();
+			assertTrue(submissionText.equalsIgnoreCase("Submission Date"));
+			PageObjectModel.test.pass("Submission Date displayed correctly");
+			
+			PageObjectModel.test.info("Getting Document Type text");
+			String documentText = queryObject.getDocumentText();
+			assertTrue(documentText.equalsIgnoreCase("Document Type"));
+			PageObjectModel.test.pass("Document Type displayed correctly");
+			
+			PageObjectModel.test.info("Getting Status text");
+			String statusText = queryObject.getStatusText();
+			assertTrue(statusText.equalsIgnoreCase("Status"));
+			PageObjectModel.test.pass("Status displayed correctly");
+			
+			PageObjectModel.test.info("Getting Modified Date text");
+			String modifiedText = queryObject.getModifiedText();
+			assertTrue(modifiedText.equalsIgnoreCase("Modified Date"));
+			PageObjectModel.test.pass("Modified Date displayed correctly");
+			
+			PageObjectModel.test.info("Getting Action text");
+			String actionText = queryObject.getActionIdText();
+			assertTrue(actionText.equalsIgnoreCase("Action"));
+			PageObjectModel.test.pass("Action displayed correctly");
+			
+			PageObjectModel.test.pass("All elements are present");
+			
+		}catch(AssertionError e){
+			
+			PageObjectModel.test.fail("One or more items are missing");
 			
 		}catch(Exception ef) {
-			
 			PageObjectModel.test.fatal(ef.toString());
-			
 		}
 	}
 	

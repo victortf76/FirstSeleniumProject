@@ -1,4 +1,4 @@
-testuser_1,Test@123,ERROR: The password you entered for the username testuser_1 is incorrect. Lost your password?
-,,Please enter your username and password.
-testuser_1,,ERROR: The password field is empty.
-,Test@123,ERROR: The username field is empty.
+wb-victortru409198,Chicoten13,1
+wb-victortru409198,Chicoten13,0
+testuser_1,Test@123,1
+testuser_1,Test@123,0

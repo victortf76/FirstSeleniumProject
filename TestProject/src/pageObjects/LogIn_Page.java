@@ -31,12 +31,16 @@ public class LogIn_Page implements IPage {
     	passwordElement.clear();
     	
     	accountElement = CustomActions.customSendKeys(accountElement,"Filling username credentials: "+username,username);
-    	passwordElement = CustomActions.customSendKeys(passwordElement,"Filling password credentials:"+password,password);
+    	passwordElement = CustomActions.customSendKeys(passwordElement,"Filling password credentials: *******",password);
     }
     
-    public void submitUserCredentials() {
-    	
-    	signinButtonElement = CustomActions.customClick(signinButtonElement,"Submiting user credentials");
+    public IPage submitUserCredentials() {
+    	try {
+    		signinButtonElement = CustomActions.customClick(signinButtonElement,"Submiting user credentials");
+    		return new Home_Page();
+    	}catch(Exception ef) {
+    		return null;
+    	}
     	
     }
     
