@@ -32,7 +32,7 @@ public class PageObjectModel {
 	public static ExtentTest test;
 	public static String usedBrowser;
 	
-	public static void initializeAll(String browser) throws MalformedURLException {
+	public static void initializeAll(String browser, String test) throws MalformedURLException {
 		//Starts the Chrome driver
 		//driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),DesiredCapabilities.chrome());
 		
@@ -54,7 +54,7 @@ public class PageObjectModel {
 		//Initialize WebDriverait
 		wait = new WebDriverWait(driver,15);
 		//Initialize Extent Reports
-		extent = ExtentManager.getReport(browser);
+		extent = ExtentManager.getReport(browser, test);
 		usedBrowser = browser;
 		
 	}

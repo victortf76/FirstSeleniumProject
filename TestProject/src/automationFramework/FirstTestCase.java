@@ -15,7 +15,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class FirstTestCase {
-	
+	/*
 	Home_Page homeObject;
 	LogIn_Page loginObject;
 	
@@ -23,7 +23,7 @@ public class FirstTestCase {
 	@BeforeTest
 	public void setUp(String browser) throws Exception {
 		
-		PageObjectModel.initializeAll(browser);
+		PageObjectModel.initializeAll(browser, "FirstTestCase");
 		
 	}
 	
@@ -113,5 +113,5 @@ public class FirstTestCase {
 		PageObjectModel.extent.flush();
 		
 	}
-
+*/
 }

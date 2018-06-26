@@ -1,15 +1,19 @@
 package automationFramework;
 
-import java.io.FileReader;
+import org.junit.Before;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import Utilities.Constants;
+import Utilities.CustomActions;
 import Utilities.ExcelUtils;
 import Utilities.PageObjectModel;
 import au.com.bytecode.opencsv.CSVReader;
 import pageObjects.Home_Page;
+import pageObjects.IPage;
 import pageObjects.LogIn_Page;
 
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -22,19 +26,20 @@ public class SecondTestCase {
 	@BeforeTest
 	public void setUp(String browser) throws Exception {
 		
-		PageObjectModel.initializeAll(browser);
+		PageObjectModel.initializeAll(browser, "SecondTestCase");
 		
 	}
 	
 	@Test
 	public void getTitle() {
 		try {
+			PageObjectModel.driver.get(Constants.URL2);
 			//Initialize Extent Test
 			PageObjectModel.test = PageObjectModel.extent.createTest("getTitle("+PageObjectModel.usedBrowser+")", "Checks the actual page's title");
-			homeObject = new Home_Page();
+			loginObject = new LogIn_Page();
 			
 			//Get the site's title
-			String realResult = homeObject.getTitle();
+			String realResult = CustomActions.customGetTitle("Obtaining LogIn Page Title's");
 			String expectedResult = "Sign In";
 			
 			// Print a Log In message to the screen
@@ -42,13 +47,34 @@ public class SecondTestCase {
 			
 			//Compare if the gotten title is the expected one
 			Assert.assertTrue(realResult.equalsIgnoreCase(expectedResult));
-			PageObjectModel.test.pass("Page title expected: '"+realResult+"'");
+			PageObjectModel.test.pass("Page title: '"+realResult+"'");
 			
 		}catch(AssertionError e){
 			
 			PageObjectModel.test.fail("Page title doesn't match");
 			
 		}catch(Exception ef){
+			
+			PageObjectModel.test.fatal(ef.toString());
+			
+		}
+	}
+	
+	@Test
+	public void KYCAccessTest() {
+		try {
+			PageObjectModel.driver.get(Constants.URL2);
+			PageObjectModel.test = PageObjectModel.extent.createTest("KYC Access("+PageObjectModel.usedBrowser+")", "Checks if it's possible to access to the KYC Query page");
+			loginObject = new LogIn_Page();
+			
+			loginObject.insertUserCredentials(Constants.Username2, Constants.Password2);
+			loginObject.submitUserCredentials();
+			
+			homeObject = new Home_Page();
+			
+			homeObject.goToKYCPage();
+			
+		}catch(Exception ef) {
 			
 			PageObjectModel.test.fatal(ef.toString());
 			

@@ -11,11 +11,11 @@ public class ExtentManager {
 
 	static ExtentReports extent;
 
-	public static ExtentReports getReport(String browser) {
+	public static ExtentReports getReport(String browser, String test) {
 		
 		extent = new ExtentReports();
 		
-		String reportName = browser+"Extent.html";
+		String reportName = test+browser+"Extent.html";
 		
 		htmlReporter = new ExtentHtmlReporter(reportName);
 		

@@ -4,14 +4,14 @@
   <test thread-count="5" name="firefoxTest(failed)">
     <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="automationFramework.FirstTestCase">
+      <class name="automationFramework.SecondTestCase">
         <methods>
-          <include name="shutDown"/>
-          <include name="logInErrorMessageCheck"/>
-          <include name="setUp"/>
           <include name="getTitle"/>
+          <include name="KYCAccessTest"/>
+          <include name="setUp"/>
+          <include name="shutDown"/>
         </methods>
-      </class> <!-- automationFramework.FirstTestCase -->
+      </class> <!-- automationFramework.SecondTestCase -->
     </classes>
   </test> <!-- firefoxTest(failed) -->
 </suite> <!-- Failed suite [Sample Suite] -->

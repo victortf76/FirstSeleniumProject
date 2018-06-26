@@ -15,4 +15,12 @@ public class CustomActions {
 		PageObjectModel.test.info(details);
 		return element;
 	}
+	
+	public static String customGetTitle(String details) {
+		
+		String title = PageObjectModel.driver.getTitle();
+		PageObjectModel.test.info(details);
+		
+		return title;
+	}
 }
