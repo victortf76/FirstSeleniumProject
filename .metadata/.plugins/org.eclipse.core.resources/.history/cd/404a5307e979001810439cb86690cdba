@@ -1,14 +1,13 @@
 package pageObjects;
 
-import static org.testng.Assert.assertTrue;
-
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.*;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.asserts.Assertion;
+
 import Utilities.CustomActions;
 import Utilities.PageObjectModel;
 
@@ -17,11 +16,8 @@ public class KYCQuery_Page implements IPage {
 	@FindBy(id = "loginIdInput")
 	static WebElement idInput;
 	
-	@FindBy (css = "#app > div > div.ant-layout > div > div > div > form > div > div.ant-card-body > div.card-content > div > div:nth-child(5) > div > div > div > div")
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > form > div > div.ant-card-body > div.card-content > div > div:nth-child(5) > div > div > div > div > div > div > div.ant-select-selection-selected-value")
 	static WebElement statusBox;
-	
-	@FindBy (css = "body > div:nth-child(17) > div > div > div > ul")
-	static WebElement statusBoxDropDown;
 	
 	@FindBy(css = "#app > div > div.ant-layout > div > div > div > form > div > div.ant-card-body > div.card-footer > button.ant-btn.ant-btn-primary.ant-btn-lg")
 	static WebElement searchButton;
@@ -65,12 +61,9 @@ public class KYCQuery_Page implements IPage {
 			PageObjectModel.wait.until(ExpectedConditions.presenceOfElementLocated(By.id("loginIdInput")));
 			PageObjectModel.test.pass("Login ID input box present");
 			
-			
 			PageObjectModel.test.info("Looking for Status dropdown box");
 			PageObjectModel.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#app > div > div.ant-layout > div > div > div > form > div > div.ant-card-body > div.card-content > div > div:nth-child(5) > div > div > div > div > div > div > div.ant-select-selection-selected-value")));
-			//if(checkDropDownOptions()) 	
 			PageObjectModel.test.pass("Status dropdown box present");
-			
 			
 			PageObjectModel.test.info("Looking for Search button");
 			PageObjectModel.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#app > div > div.ant-layout > div > div > div > form > div > div.ant-card-body > div.card-footer > button.ant-btn.ant-btn-primary.ant-btn-lg")));
@@ -85,31 +78,6 @@ public class KYCQuery_Page implements IPage {
 			return false;
 		}
 		return passed;
-	}
-	
-	public boolean checkDropDownOptions() {
-		try {
-			PageObjectModel.wait.until(ExpectedConditions.elementToBeClickable(statusBox));
-			CustomActions.customClick(statusBox, "Displaying drop down option");
-			Select dropDown = new Select (statusBoxDropDown);
-			List<WebElement> dd = dropDown.getOptions();
-			
-			String option1 = dd.get(0).toString();
-			assertTrue(option1.equalsIgnoreCase("In Review"));
-			
-			String option2 = dd.get(1).toString();
-			assertTrue(option2.equalsIgnoreCase("Pending"));
-			
-			String option3 = dd.get(2).toString();
-			assertTrue(option3.equalsIgnoreCase("Closed"));
-			
-			return true;
-		}catch(AssertionError e) {
-			PageObjectModel.test.fail("The Status drop down box options are incorrect");
-			return false;
-		}
-		
-		
 	}
 	
 	public String getOrderIdText() {

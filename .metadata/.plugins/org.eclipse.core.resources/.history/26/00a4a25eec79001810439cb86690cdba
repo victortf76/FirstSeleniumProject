@@ -7,8 +7,12 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.*;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.asserts.Assertion;
+
 import Utilities.CustomActions;
 import Utilities.PageObjectModel;
 
@@ -17,11 +21,8 @@ public class KYCQuery_Page implements IPage {
 	@FindBy(id = "loginIdInput")
 	static WebElement idInput;
 	
-	@FindBy (css = "#app > div > div.ant-layout > div > div > div > form > div > div.ant-card-body > div.card-content > div > div:nth-child(5) > div > div > div > div")
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > form > div > div.ant-card-body > div.card-content > div > div:nth-child(5) > div > div > div > div > div > div > div.ant-select-selection-selected-value")
 	static WebElement statusBox;
-	
-	@FindBy (css = "body > div:nth-child(17) > div > div > div > ul")
-	static WebElement statusBoxDropDown;
 	
 	@FindBy(css = "#app > div > div.ant-layout > div > div > div > form > div > div.ant-card-body > div.card-footer > button.ant-btn.ant-btn-primary.ant-btn-lg")
 	static WebElement searchButton;
@@ -68,8 +69,7 @@ public class KYCQuery_Page implements IPage {
 			
 			PageObjectModel.test.info("Looking for Status dropdown box");
 			PageObjectModel.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#app > div > div.ant-layout > div > div > div > form > div > div.ant-card-body > div.card-content > div > div:nth-child(5) > div > div > div > div > div > div > div.ant-select-selection-selected-value")));
-			//if(checkDropDownOptions()) 	
-			PageObjectModel.test.pass("Status dropdown box present");
+			if(checkDropDownOptions()) PageObjectModel.test.pass("Status dropdown box present");
 			
 			
 			PageObjectModel.test.info("Looking for Search button");
@@ -89,9 +89,7 @@ public class KYCQuery_Page implements IPage {
 	
 	public boolean checkDropDownOptions() {
 		try {
-			PageObjectModel.wait.until(ExpectedConditions.elementToBeClickable(statusBox));
-			CustomActions.customClick(statusBox, "Displaying drop down option");
-			Select dropDown = new Select (statusBoxDropDown);
+			Select dropDown = new Select (PageObjectModel.driver.findElement(By.cssSelector("#app > div > div.ant-layout > div > div > div > form > div > div.ant-card-body > div.card-content > div > div:nth-child(5) > div > div > div > div > div > div > div.ant-select-selection-selected-value")));
 			List<WebElement> dd = dropDown.getOptions();
 			
 			String option1 = dd.get(0).toString();

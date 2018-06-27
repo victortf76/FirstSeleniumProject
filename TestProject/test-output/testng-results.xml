@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Sample Suite" duration-ms="66553" started-at="2018-06-26T14:46:57Z" finished-at="2018-06-26T14:48:03Z">
+  <suite name="Sample Suite" duration-ms="65499" started-at="2018-06-27T10:25:23Z" finished-at="2018-06-27T10:26:29Z">
     <groups>
     </groups>
-    <test name="chromeTest" duration-ms="66553" started-at="2018-06-26T14:46:57Z" finished-at="2018-06-26T14:48:03Z">
+    <test name="chromeTest" duration-ms="65499" started-at="2018-06-27T10:25:23Z" finished-at="2018-06-27T10:26:29Z">
       <class name="automationFramework.SecondTestCase">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:automationFramework.SecondTestCase@1ce92674]" name="setUp" is-config="true" duration-ms="12688" started-at="2018-06-26T14:46:57Z" finished-at="2018-06-26T14:47:10Z">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:automationFramework.SecondTestCase@1ce92674]" name="setUp" is-config="true" duration-ms="16016" started-at="2018-06-27T10:25:23Z" finished-at="2018-06-27T10:25:39Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="KYCBOLoginTest()[pri:0, instance:automationFramework.SecondTestCase@1ce92674]" name="KYCBOLoginTest" duration-ms="43493" started-at="2018-06-26T14:47:10Z" finished-at="2018-06-26T14:47:53Z">
+        <test-method status="PASS" signature="KYCBOLoginTest()[pri:0, instance:automationFramework.SecondTestCase@1ce92674]" name="KYCBOLoginTest" duration-ms="41289" started-at="2018-06-27T10:25:39Z" finished-at="2018-06-27T10:26:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- KYCBOLoginTest -->
-        <test-method status="PASS" signature="KYCQueryOrderPageParametersDisplayedTest()[pri:0, instance:automationFramework.SecondTestCase@1ce92674]" name="KYCQueryOrderPageParametersDisplayedTest" duration-ms="8935" started-at="2018-06-26T14:47:53Z" finished-at="2018-06-26T14:48:02Z">
+        <test-method status="PASS" signature="KYCQueryOrderPageParametersDisplayedTest()[pri:0, instance:automationFramework.SecondTestCase@1ce92674]" name="KYCQueryOrderPageParametersDisplayedTest" duration-ms="6599" started-at="2018-06-27T10:26:20Z" finished-at="2018-06-27T10:26:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- KYCQueryOrderPageParametersDisplayedTest -->
-        <test-method status="PASS" signature="shutDown()[pri:0, instance:automationFramework.SecondTestCase@1ce92674]" name="shutDown" is-config="true" duration-ms="1411" started-at="2018-06-26T14:48:02Z" finished-at="2018-06-26T14:48:03Z">
+        <test-method status="PASS" signature="shutDown()[pri:0, instance:automationFramework.SecondTestCase@1ce92674]" name="shutDown" is-config="true" duration-ms="1569" started-at="2018-06-27T10:26:27Z" finished-at="2018-06-27T10:26:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shutDown -->
