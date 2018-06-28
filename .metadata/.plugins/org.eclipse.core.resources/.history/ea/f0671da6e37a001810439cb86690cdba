@@ -87,7 +87,6 @@ public class SecondTestCase {
 			
 			queryObject = (KYCQuery_Page) homeObject.goToKYCPage();
 			
-			
 			PageObjectModel.test.info("Looking for Login ID input box");		
 			assertTrue(queryObject.presenceOfLoginIdBox());
 			PageObjectModel.test.pass("Login ID input box present");
@@ -103,7 +102,6 @@ public class SecondTestCase {
 			PageObjectModel.test.info("Looking for Clear button");
 			assertTrue(queryObject.presenceOfClearButton());
 			PageObjectModel.test.pass("Clear button present");
-			
 			
 			PageObjectModel.test.info("Getting KYC Order ID text");
 			String orderIdText = queryObject.getOrderIdText();

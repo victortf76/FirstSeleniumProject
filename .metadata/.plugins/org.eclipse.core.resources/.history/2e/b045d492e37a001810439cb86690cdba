@@ -60,8 +60,8 @@ public class KYCQuery_Page implements IPage {
 	
 	public boolean presenceOfLoginIdBox() {
 		try {
-			
-			PageObjectModel.wait.until(ExpectedConditions.presenceOfElementLocated(By.id("loginIdInput")));			
+			PageObjectModel.wait.until(ExpectedConditions.presenceOfElementLocated(By.id("loginIdInput")));
+						
 			
 			return true;
 			
@@ -74,8 +74,10 @@ public class KYCQuery_Page implements IPage {
 	public boolean presenceOfStatusDropdownBox() {
 		try {
 			
+			PageObjectModel.test.info("Looking for Status dropdown box");
 			PageObjectModel.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#app > div > div.ant-layout > div > div > div > form > div > div.ant-card-body > div.card-content > div > div:nth-child(5) > div > div > div > div > div > div > div.ant-select-selection-selected-value")));
 			//if(checkDropDownOptions()) 	
+			PageObjectModel.test.pass("Status dropdown box present");
 			
 			return true;
 			
@@ -91,7 +93,9 @@ public class KYCQuery_Page implements IPage {
 	public boolean presenceOfSearchButton() {
 		try {
 			
+			PageObjectModel.test.info("Looking for Search button");
 			PageObjectModel.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#app > div > div.ant-layout > div > div > div > form > div > div.ant-card-body > div.card-footer > button.ant-btn.ant-btn-primary.ant-btn-lg")));
+			PageObjectModel.test.pass("Search button present");
 			
 			return true;
 			
@@ -107,7 +111,9 @@ public class KYCQuery_Page implements IPage {
 	public boolean presenceOfClearButton() {
 		try {
 			
+			PageObjectModel.test.info("Looking for Clear button");
 			PageObjectModel.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#app > div > div.ant-layout > div > div > div > form > div > div.ant-card-body > div.card-footer > button:nth-child(2)")));
+			PageObjectModel.test.pass("Clear button present");
 			
 			return true;
 			
@@ -140,7 +146,8 @@ public class KYCQuery_Page implements IPage {
 		}catch(AssertionError e) {
 			PageObjectModel.test.fail("The Status drop down box options are incorrect");
 			return false;
-		}	
+		}
+		
 		
 	}
 	
