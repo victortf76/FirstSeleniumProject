@@ -10,10 +10,6 @@ public class Constants {
 
     public static final String Password = "Test@123";
     
-    public static final String Username2 = "wb-victortru409198";
-    
-    public static final String Password2 = "Chicoten13";
-    
     public static final String Path_TestData = "C:\\Users\\Convidad01\\Documents\\FirstSeleniumProject\\TestProject\\src\\testData\\";
     
     public static final String Excel_TestData = "TestData.xlsx";
