@@ -36,10 +36,15 @@ public class LogIn_Page implements IPage {
     
     public IPage submitUserCredentials() {
     	try {
+    		
     		signinButtonElement = CustomActions.customClick(signinButtonElement,"Submiting user credentials");
     		return new Home_Page();
+    		
     	}catch(Exception ef) {
+    		
+    		PageObjectModel.test.fatal(ef.toString());
     		return null;
+    		
     	}
     	
     }

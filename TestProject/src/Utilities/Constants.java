@@ -2,7 +2,7 @@ package Utilities;
 
 public class Constants {
 	
-	public static final String URL = "http://www.store.demoqa.com";
+	public static final String URL = "http://ifcbuservice.id.sit.alipay.net/login.htm";
 	
 	public static final String URL2 = "http://ifcbuservice.id.test1.alipay.net/login.htm";
 	 

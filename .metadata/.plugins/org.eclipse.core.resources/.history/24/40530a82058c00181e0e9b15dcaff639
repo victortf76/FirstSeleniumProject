@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
+<suite name="Sample Suite" verbose="3">
+	<test name="chromeTest">
+		<parameter name="browser" value="chrome" />
+		
+		<groups>
+			<run>
+				<include name="Prepost"/>
+				<include name="Login"/>
+				<include name="Manage"/>
+				<include name="Details"/>
+			</run>
+		</groups>
+		
+		<classes>
+			<class name="automationFramework.BOTestSuite" />
+		</classes>
+		
+	</test>
+	   
+	<test name="firefoxTest">
+		<parameter name="browser" value="firefox" />
+		<groups>
+			<run>
+				<include name="Prepost"/>
+				<include name="Login"/>
+				<include name="Manage"/>
+				<include name="Details"/>
+			</run>
+		</groups>
+		
+		<classes>
+			<class name="automationFramework.BOTestSuite" />
+		</classes>
+	</test>
+	 
+</suite>

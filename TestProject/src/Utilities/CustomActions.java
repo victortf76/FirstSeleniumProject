@@ -10,6 +10,12 @@ public class CustomActions {
 		return element;
 	}
 	
+	public static WebElement customSubmit(WebElement element, String details){
+		element.submit();
+		PageObjectModel.test.info(details);
+		return element;
+	}
+	
 	public static WebElement customSendKeys(WebElement element, String details,String keys) {
 		element.sendKeys(keys);
 		PageObjectModel.test.info(details);

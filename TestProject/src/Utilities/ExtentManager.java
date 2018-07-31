@@ -17,7 +17,7 @@ public class ExtentManager {
 		
 		String reportName = test+browser+"Extent.html";
 		
-		htmlReporter = new ExtentHtmlReporter(reportName);
+		htmlReporter = new ExtentHtmlReporter("C:\\Users\\Convidad01\\Documents\\FirstSeleniumProject\\TestProject\\Reports\\"+reportName);
 		
 		extent.attachReporter(htmlReporter);
 		

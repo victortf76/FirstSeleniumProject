@@ -1,6 +1,8 @@
 package Utilities;
 
 import java.net.MalformedURLException;
+import java.util.ArrayList;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,8 +24,6 @@ public class PageObjectModel {
 	public static String usedBrowser;
 	
 	public static void initializeAll(String browser, String test) throws MalformedURLException {
-		//Starts the Chrome driver
-		//driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),DesiredCapabilities.chrome());
 		
 		if (browser.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver","C:\\Users\\Convidad01\\QAEnvironment\\chromedriver_win32\\chromedriver.exe");
@@ -49,9 +49,27 @@ public class PageObjectModel {
 	}
 	
 	public static ExtentTest newTest(String name, String description) {
-		
 		return test;
 	}
-
 	
+	public static boolean changeToWindow(String windowTitle, boolean closeOtherTabs) {
+			
+		ArrayList<String> tabHandles = new ArrayList<String>(driver.getWindowHandles());
+		boolean newWindowFound = false;
+	
+		for(String eachHandle : tabHandles)
+		{
+		    driver.switchTo().window(eachHandle); 
+		    if(driver.getTitle().equalsIgnoreCase(windowTitle))
+		    {
+		        
+		    	newWindowFound = true;  
+			        
+			}else if (closeOtherTabs) driver.close();
+		}
+		
+		return newWindowFound;	
+		
+	}
+		
 }

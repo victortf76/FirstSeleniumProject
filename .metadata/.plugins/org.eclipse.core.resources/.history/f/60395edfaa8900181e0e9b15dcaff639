@@ -1,0 +1,108 @@
+package pageObjects;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import Utilities.PageObjectModel;
+
+public class ManageKYCDetails_Page implements IPage {
+	
+	@FindBy(css = "#app > div > div.ant-layout > div > div > div > div > div:nth-child(1) > div.ant-card-head")
+	static WebElement KYCOrderDetails;
+	
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > div > div:nth-child(1) > div.ant-card-body > div > div.kyc-content-subtitle > div > div")
+	static WebElement KYCOrderID;
+	
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > div > div:nth-child(1) > div.ant-card-body > div > div.kyc-content-separator > div > div.ant-col-12.border-separator.left-separator > div > div:nth-child(1) > div.ant-col-8")
+	static WebElement loginId;
+	
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > div > div:nth-child(1) > div.ant-card-body > div > div.kyc-content-separator > div > div.ant-col-12.border-separator.left-separator > div > div:nth-child(2) > div.ant-col-8")
+	static WebElement userAccountName;
+	
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > div > div:nth-child(1) > div.ant-card-body > div > div.kyc-content-separator > div > div.ant-col-12.border-separator.left-separator > div > div:nth-child(3) > div.ant-col-8")
+	static WebElement orderStatus;
+	
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > div > div:nth-child(1) > div.ant-card-body > div > div.kyc-content-separator > div > div:nth-child(2) > div > div:nth-child(1) > div.ant-col-8")
+	static WebElement submissionDate;
+	
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > div > div:nth-child(1) > div.ant-card-body > div > div.kyc-content-separator > div > div:nth-child(2) > div > div:nth-child(2) > div.ant-col-8")
+	static WebElement modifiedDate;
+	
+	
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > div > div:nth-child(2) > div.ant-card-head")
+	static WebElement KYCData;
+	
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > div > div:nth-child(2) > div.ant-card-body > div > div > div > div.ant-col-12.border-separator.left-separator > div > div:nth-child(1) > div.ant-col-8")
+	static WebElement KTPID;
+	
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > div > div:nth-child(2) > div.ant-card-body > div > div > div > div.ant-col-12.border-separator.left-separator > div > div:nth-child(2) > div.ant-col-8")
+	static WebElement name;
+	
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > div > div:nth-child(2) > div.ant-card-body > div > div > div > div.ant-col-12.border-separator.left-separator > div > div:nth-child(3) > div.ant-col-8")
+	static WebElement placeBirth;
+	
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > div > div:nth-child(2) > div.ant-card-body > div > div > div > div.ant-col-12.border-separator.left-separator > div > div:nth-child(4) > div.ant-col-8")
+	static WebElement dateBirth;
+	
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > div > div:nth-child(2) > div.ant-card-body > div > div > div > div.ant-col-12.border-separator.left-separator > div > div:nth-child(5) > div.ant-col-8")
+	static WebElement gender;
+	
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > div > div:nth-child(2) > div.ant-card-body > div > div > div > div.ant-col-12.border-separator.left-separator > div > div:nth-child(6) > div.ant-col-8")
+	static WebElement religion;
+	
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > div > div:nth-child(2) > div.ant-card-body > div > div > div > div:nth-child(2) > div > div:nth-child(1) > div.ant-col-8")
+	static WebElement KKID;
+	
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > div > div:nth-child(2) > div.ant-card-body > div > div > div > div:nth-child(2) > div > div:nth-child(2) > div.ant-col-8")
+	static WebElement occupy;
+	
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > div > div:nth-child(2) > div.ant-card-body > div > div > div > div:nth-child(2) > div > div:nth-child(3) > div.ant-col-8")
+	static WebElement province;
+	
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > div > div:nth-child(2) > div.ant-card-body > div > div > div > div:nth-child(2) > div > div:nth-child(4) > div.ant-col-8")
+	static WebElement city;
+	
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > div > div:nth-child(2) > div.ant-card-body > div > div > div > div:nth-child(2) > div > div:nth-child(5) > div.ant-col-8")
+	static WebElement district;
+	
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > div > div:nth-child(2) > div.ant-card-body > div > div > div > div:nth-child(2) > div > div:nth-child(6) > div.ant-col-8")
+	static WebElement address;
+	
+	
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > div > div:nth-child(3) > div.ant-card-head")
+	static WebElement imageData;
+	
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > div > div:nth-child(3) > div.ant-card-body > div > div > div > div > div > div > div")
+	static WebElement image;
+	
+	
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > div > div.kyc-btn-container.clearfix > button")
+	static WebElement backButton;
+	
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > div > div.kyc-btn-container.clearfix > div > button:nth-child(1)")
+	static WebElement editButton;
+	
+	@FindBy (css = "#app > div > div.ant-layout > div > div > div > div > div.kyc-btn-container.clearfix > div > button:nth-child(2)")
+	static WebElement lockButton;
+	
+	
+	public ManageKYCDetails_Page() {
+    	PageObjectModel.wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#app > div > div.ant-layout > div > div > div > div > div:nth-child(3) > div.ant-card-body > div > div > div > div > div > div > div")));
+		PageFactory.initElements(PageObjectModel.driver, this);
+    }
+	
+	public String getOrderIdText() {
+		String text;
+		try {
+			text = KYCOrderDetails.getText();
+			return text;
+		}catch(Exception ef) {
+			PageObjectModel.test.fail(KYCOrderDetails+" not found");
+			return null;
+		}
+		
+	}
+	
+	
+}

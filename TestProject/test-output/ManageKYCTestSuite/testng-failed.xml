@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [ManageKYCTestSuite]">
+  <test thread-count="5" name="chromeTest(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="automationFramework.ManageKYCTestSuite">
+        <methods>
+          <include name="checkFilterFunctionality"/>
+          <include name="setUp"/>
+          <include name="shutDown"/>
+          <include name="ManageKYCDetailsPageDisplayedTest"/>
+          <include name="ManageKYCPageDetailsParametersDisplayedTest"/>
+          <include name="ManageKYCPageParametersDisplayedTest"/>
+        </methods>
+      </class> <!-- automationFramework.ManageKYCTestSuite -->
+    </classes>
+  </test> <!-- chromeTest(failed) -->
+</suite> <!-- Failed suite [ManageKYCTestSuite] -->

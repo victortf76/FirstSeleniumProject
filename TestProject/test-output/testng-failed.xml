@@ -3,14 +3,22 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Sample Suite]">
   <test thread-count="5" name="chromeTest(failed)">
     <parameter name="browser" value="chrome"/>
+    <groups>
+      <run>
+        <include name="Prepost"/>
+        <include name="Manage"/>
+        <include name="Details"/>
+      </run>
+    </groups>
     <classes>
-      <class name="automationFramework.SecondTestCase">
+      <class name="automationFramework.BOTestSuite">
         <methods>
-          <include name="searchParametersTest"/>
-          <include name="setUp"/>
-          <include name="shutDown"/>
+          <include name="checkFilterFunctionality"/>
+          <include name="ManageKYCPageParametersDisplayedTest"/>
+          <include name="ManageKYCDetailsPageDisplayedTest"/>
+          <include name="ManageKYCPageDetailsParametersDisplayedTest"/>
         </methods>
-      </class> <!-- automationFramework.SecondTestCase -->
+      </class> <!-- automationFramework.BOTestSuite -->
     </classes>
   </test> <!-- chromeTest(failed) -->
 </suite> <!-- Failed suite [Sample Suite] -->
